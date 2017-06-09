@@ -1,0 +1,9 @@
+2(2).png
+510
+30
+0
+17
+1.1
+128
+068-Animal03.wav
+teleport.wav

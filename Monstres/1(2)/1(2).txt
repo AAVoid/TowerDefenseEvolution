@@ -1,0 +1,9 @@
+1(2).png
+235
+0
+1
+1
+1.2
+13
+067-Animal02.wav
+teleport.wav

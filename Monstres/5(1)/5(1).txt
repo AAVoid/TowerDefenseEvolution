@@ -1,0 +1,9 @@
+5(1).png
+1610
+104
+78
+98
+0.7
+396
+080-Monster02.wav
+teleport.wav

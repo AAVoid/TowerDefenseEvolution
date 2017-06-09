@@ -1,0 +1,515 @@
+#-*- coding:utf-8 -*-
+
+
+
+#LES CONSTANTES SONT PLACEES PAR RAPPORT AU FICHIER DANS LEQUEL ELLES SONT
+#UTILISEES MEME SI CE FICHIER N'A PAS DE RAPPORT DIRECT AVEC LA CONSTANTE
+
+
+
+##############################################################################
+#SYSTEME
+##############################################################################
+
+
+LARGEUR_FENETRE = 640
+HAUTEUR_FENETRE = 480
+NOM_JEU = """Démo : Tower Defense Evolution par ABOSO Aymerik et LAVISO Fabien""" #Nom de la fenetre
+FREQUENCE_BOUCLE = 30 #Images par secondes
+NOM_DOSSIER_IMAGES = "Images"
+ICONE_JEU = NOM_DOSSIER_IMAGES + "/" + "Icone.png"
+NOM_DOSSIER_FONTS = "Fonts"
+NOM_DOSSIER_MUSIQUES = "Musiques"
+NOM_DOSSIER_SONS = "Sons"
+NOM_DOSSIER_CARTES = "Cartes"
+EXTENSION_FICHIER_MONSTRE = ".txt"
+EXTENSION_FICHIER_CARTE = ".txt"
+NOM_DOSSIER_MONSTRES = "Monstres"
+NOM_DOSSIER_HEROS = "Heros"
+EXTENSION_FICHIER_HEROS = ".txt"
+
+#Pour les captures d'écran
+NOM_DOSSIER_CAPTURE_D_ECRAN = "Captures d'écran"
+NOM_FICHIER_INFO = NOM_DOSSIER_CAPTURE_D_ECRAN + "/" + "info.txt"
+NOM_CAPTURE = "Capture"
+EXTENSION_FICHIER_CAPTURE = ".png"
+
+#les directions de déplacement de la vue
+VUE_DIRECTION_BAS = 0
+VUE_DIRECTION_HAUT = 1
+VUE_DIRECTION_GAUCHE = 2
+VUE_DIRECTION_DROITE = 3
+PAS_DEPLACEMENT_VUE = 20 #pas de déplacement de la vue
+
+FICHIER_SAUVEGARDE = "Sauvegarde.txt"
+
+#Pour l'augmentation des statistiques des héros lorsqu'ils montent de niveau
+MIN_AUGMENTATION_1 = 1 #les statistiques augmenteront au moins d'un point en cas de level up
+MIN_AUGMENTATION_2 = 5 #l'écart est grand par rapport au précédent
+MIN_AUGMENTATION_3 = 13 #les choses sérieuses commencent !!!
+MIN_AUGMENTATION_4 = 25
+MIN_AUGMENTATION_5 = 40 #ABUSE
+#--------- 11m
+INTELLIGENCE_MAX_LEVEL_UP_11M = 2
+PRECISION_MAX_LEVEL_UP_11M = 3
+
+#--------- 11p
+FORCE_MAX_LEVEL_UP_11P = 3
+PRECISION_MAX_LEVEL_UP_11P = 3
+
+#--------- 1m
+INTELLIGENCE_MAX_LEVEL_UP_1M = 4
+PRECISION_MAX_LEVEL_UP_1M = 3
+
+#--------- 1p
+FORCE_MAX_LEVEL_UP_1P = 3
+PRECISION_MAX_LEVEL_UP_1P = 3
+
+#--------- 21p
+FORCE_MAX_LEVEL_UP_21P = 7
+PRECISION_MAX_LEVEL_UP_21P = 10
+
+#--------- 2m
+INTELLIGENCE_MAX_LEVEL_UP_2M = 7
+PRECISION_MAX_LEVEL_UP_2M = 7
+
+#--------- 2p
+FORCE_MAX_LEVEL_UP_2P = 7
+PRECISION_MAX_LEVEL_UP_2P = 10
+
+#--------- 31p
+FORCE_MAX_LEVEL_UP_31P = 16
+INTELLIGENCE_MAX_LEVEL_UP_31P = 15
+PRECISION_MAX_LEVEL_UP_31P = 20
+
+#--------- 3m
+INTELLIGENCE_MAX_LEVEL_UP_3M = 20
+PRECISION_MAX_LEVEL_UP_3M = 16
+
+#--------- 3p
+FORCE_MAX_LEVEL_UP_3P = 20
+PRECISION_MAX_LEVEL_UP_3P = 17
+
+#--------- 41p
+FORCE_MAX_LEVEL_UP_41P = 33
+INTELLIGENCE_MAX_LEVEL_UP_41P = 33
+PRECISION_MAX_LEVEL_UP_41P = 30
+
+#--------- 4m
+INTELLIGENCE_MAX_LEVEL_UP_4M = 43
+PRECISION_MAX_LEVEL_UP_4M = 30
+
+#--------- 4p
+FORCE_MAX_LEVEL_UP_4P = 43
+PRECISION_MAX_LEVEL_UP_4P = 30
+
+#--------- 5A
+FORCE_MAX_LEVEL_UP_5A = 100 #et oui j'abuse !
+INTELLIGENCE_MAX_LEVEL_UP_5A = 100
+PRECISION_MAX_LEVEL_UP_5A = 100
+
+#--------- 5F
+FORCE_MAX_LEVEL_UP_5F = 100
+INTELLIGENCE_MAX_LEVEL_UP_5F = 100
+PRECISION_MAX_LEVEL_UP_5F = 100
+TEMPS_CHANGEMENT_PAUSE = 0.3 #secondes
+
+FICHIER_IMAGE_PARTIE_EN_PAUSE = NOM_DOSSIER_IMAGES + "/" + "partieEnPause.png"
+SON_CAPTURE_ECRAN = NOM_DOSSIER_SONS + "/" + "captureEcran.wav"
+SON_PERDRE_VIE = NOM_DOSSIER_SONS + "/" + "perdreVie.wav"
+
+
+
+
+##############################################################################
+#MENU PRINCIPAL
+##############################################################################
+
+
+POSITION_DEPART_MENU = 0 #0 : Nouvelle Partie ; 1 : Continuer ; 2 : Crédits
+TEMPS_FONDU_MENU_PRINCIPAL = 1.5 #les images prendront X secondes pour apparaitre/disparaitre en fondu
+TEMPS_FONDU_MENU_PRINCIPAL2 = 1 #pour acceder aux differentes partie : nouvelle partie, continuer, crédits
+FONT_MENU = NOM_DOSSIER_FONTS + "/" + "Curl.ttf"
+FONT_CREDITS = NOM_DOSSIER_FONTS + "/" + "Curl.ttf"
+IMAGE_ECRAN_TITRE_1 = NOM_DOSSIER_IMAGES + "/" + "EcranTitre1.png"
+IMAGE_ECRAN_TITRE_2 = NOM_DOSSIER_IMAGES + "/" + "EcranTitre2.png"
+IMAGE_FLECHE_HAUT = NOM_DOSSIER_IMAGES + "/" + "FlecheHaut.png"
+IMAGE_FLECHE_BAS = NOM_DOSSIER_IMAGES + "/" + "FlecheBas.png"
+IMAGE_FOND_CREDITS = NOM_DOSSIER_IMAGES + "/" + "FontBlanc.png"
+TEXTE_NOUVELLE_PARTIE_MENU_PRINCIPAL = u"""Nouvelle Partie""" #On précise qu'on est en unicode pour que les accents s'affichent
+TEXTE_CONTINUER_MENU_PRINCIPAL = u"""Continuer"""
+TEXTE_CREDITS_MENU_PRINCIPAL = u"""Crédits"""
+MUSIQUE_MENU_PRINCIPAL = NOM_DOSSIER_MUSIQUES + "/" + "Theme Principal.ogg"
+SON_CURSEUR1 = NOM_DOSSIER_SONS + "/" + "Curseur2.wav"
+FREQUENCE_BOUCLE = 20
+TAILLE_POLICE_MENU_PRINCIPAL = 60
+ATTENTE_DEMARRAGE_MENU = 2 #Temps d'attente avant que le menu s'affiche
+ATTENTE_DEPLACEMENT_MENU = 0.15 #Pour ralentir le déplacement dans le menu
+COULEUR_ROUGE_TEXTE_MENU_PRINCIPAL = 255
+COULEUR_VERT_TEXTE_MENU_PRINCIPAL = 255
+COULEUR_BLEU_TEXTE_MENU_PRINCIPAL = 255
+TAILLE_POLICE_CREDITS = 30
+COULEUR_ROUGE_TEXTE_CREDITS = 255
+COULEUR_VERT_TEXTE_CREDITS = 0
+COULEUR_BLEU_TEXTE_CREDITS = 0
+COULEUR_ROUGE_TEXTE_CREDITS2 = 0
+COULEUR_VERT_TEXTE_CREDITS2 = 0
+COULEUR_BLEU_TEXTE_CREDITS2 = 0
+POSITION_X_TEXTE_CREDITS = 10
+ATTENTE_TEXTE_CREDITS = 0.001 #Vitesse de déplacement du texte des crédits (toutes les X secondes)
+VITESSE_TEXTE_CREDITS = 1 #Nombres de pixels lors du déplacement du texte des crédits
+
+"""EQUIPE : ABOSO Aymerik et LAVISO Fabien
+
+MERCI SPECIAUX :
+    GRAPHISMES :
+        RPG Maker XP
+        http://untamed.wild-refuge.net
+        http://www.geocities.jp/kurororo4/looseleaf/
+    MUSIQUES :
+        Final Fantasy Tactic Advance 2
+        Final Fantasy XII Revenant Wings
+	http://www.youtube-mp3.org/fr
+	http://media.io/
+	http://www.online-convert.com
+
+CE JEU A ETE REALISE EN LANGAGE PYTHON
+GRACE A PYGAME DANS LE CADRE D'UN
+PROJET D'ETUDE DE LICENCE
+MATHEMATIQUES ET INFORMATIQUE
+LE JEU EST SIMPLE MAIS ON ESPERE
+QU'IL A ETE AMUSANT !
+
+
+FIN"""
+
+NOMBRE_LIGNES_CREDITS = 19
+TEXTE_CREDITS_LIGNE_1 =      u"""EQUIPE : ABOSO Aymerik et LAVISO Fabien"""
+TEXTE_CREDITS_LIGNE_2 =      u"""MERCI SPECIAUX :"""
+TEXTE_CREDITS_LIGNE_3 =      u"""****GRAPHISMES :"""
+TEXTE_CREDITS_LIGNE_4 =      u"""        RPG Maker XP"""
+TEXTE_CREDITS_LIGNE_5 =      u"""        http://untamed.wild-refuge.net"""
+TEXTE_CREDITS_LIGNE_6 =      u"""        http://www.geocities.jp/kurororo4/looseleaf/"""
+TEXTE_CREDITS_LIGNE_7 =      u"""****MUSIQUES :"""
+TEXTE_CREDITS_LIGNE_8 =      u"""        Final Fantasy Tactic Advance 2"""
+TEXTE_CREDITS_LIGNE_9 =      u"""        Final Fantasy XII Revenant Wings"""
+TEXTE_CREDITS_LIGNE_10 =     u"""        http://www.youtube-mp3.org/fr"""
+TEXTE_CREDITS_LIGNE_11 =     u"""        http://media.io/"""
+TEXTE_CREDITS_LIGNE_12 =     u"""        http://www.online-convert.com"""
+TEXTE_CREDITS_LIGNE_13 =     u"""CE JEU A ETE REALISE EN LANGAGE PYTHON"""
+TEXTE_CREDITS_LIGNE_14 =     u"""GRACE A PYGAME DANS LE CADRE D'UN"""
+TEXTE_CREDITS_LIGNE_15 =     u"""PROJET D'ETUDE DE LICENCE"""
+TEXTE_CREDITS_LIGNE_16 =     u"""MATHEMATIQUES ET INFORMATIQUE"""
+TEXTE_CREDITS_LIGNE_17 =     u"""LE JEU EST SIMPLE MAIS ON ESPERE"""
+TEXTE_CREDITS_LIGNE_18 =     u"""QU'IL A ETE AMUSANT !"""
+TEXTE_CREDITS_LIGNE_19 =     u"""FIN"""
+
+
+MUSIQUE_CREDITS = NOM_DOSSIER_MUSIQUES + "/" + "Credits.ogg"
+SON_CURSEUR_ANNULE = NOM_DOSSIER_SONS + "/" + "Annuler.wav"
+FONT_CONTINUER = NOM_DOSSIER_FONTS + "/" + "Curl.ttf"
+FONT_NOUVELLE_PARTIE = NOM_DOSSIER_FONTS + "/" + "Curl.ttf"
+TAILLE_POLICE_CONTINUER = 30
+TAILLE_POLICE_NOUVELLE_PARTIE = 30
+IMAGE_FOND_CONTINUER = NOM_DOSSIER_IMAGES + "/" + "chargementEffectue.png"
+IMAGE_FOND_NOUVELLE_PARTIE = NOM_DOSSIER_IMAGES + "/" + "confirmationNouvellePartie.png"
+MUSIQUE_CONTINUER = NOM_DOSSIER_MUSIQUES + "/" + "Signpost.ogg"
+MUSIQUE_NOUVELLE_PARTIE = NOM_DOSSIER_MUSIQUES + "/" + "Words Put Together.ogg"
+
+
+
+
+##############################################################################
+#CARTE DU MONDE
+##############################################################################
+
+
+AVANCEMENT_MAX_AVENTURE = 6 #Que 7 cartes jouables sur les 21 (démo)
+TEMPS_ATTENTE_CHANGEMENT_POSITION = 1
+MUSIQUE_CARTE_DU_MONDE = NOM_DOSSIER_MUSIQUES + "/" + "FFI_-_Main_Theme.ogg"
+SON_DEPLACEMENT_CARTE_DU_MONDE = NOM_DOSSIER_SONS + "/" + "deplacementMapMonde.wav"
+SON_ENGAGEMENT = NOM_DOSSIER_SONS + "/" + "Engagement.wav"
+TEMPS_ENGAGEMENT = 6 #secondes
+TEMPS_FONDU_AFFICHAGE_CARTE_DU_MONDE = 1
+IMAGE_PERSONNAGE = NOM_DOSSIER_IMAGES + "/" + "personnageCarteDuMonde.png"
+VITESSE_ANIMATION_PERSONNAGE_CARTE_DU_MONDE = 0.3
+
+
+##############################################################################
+#CARTE
+##############################################################################
+
+
+NOMBRE_DIRECTIONS_POSSIBLES_PAR_DEFAUT = 4
+DIRECTION_PAR_DEFAUT = "i"
+#LES DIRECTIONS SONT :
+#p : le monstre reste immobile et on peut placer un héro à cette position
+#i : le monstre reste immobile et on ne peut pas placer un héro à cette position
+#t : le monstre se téléporte à une des positions programmées
+#d : le monstre va à droite
+#g : le monstre va à gauche
+#h : le monstre va en haut
+#b : le monstre va en bas
+LIGNE_PERSONNAGE_HAUT = 3
+LIGNE_PERSONNAGE_BAS = 0
+LIGNE_PERSONNAGE_GAUCHE = 1
+LIGNE_PERSONNAGE_DROITE = 2
+TEMPS_FONDU_ANNONCE_CARTE = 2
+TEMPS_FONDU_AFFICHAGE_CARTE = 1
+TEMPS_ATTENTE_AFFICHER_INTERFACE_PLACER_HERO = 0.3 #X secondes
+TEMPS_ATTENTE_CHANGER_HEROS = 0.3 #X secondes
+#Noms des héros, affichés dans l'interface d'invocation des héros
+NOMS_HEROS = [u"Kate",u"Knight",u"Anna",u"Louis",u"Hélène",u"Light",u"Glen",u"Wolf",u"Mute",u"Kiara",u"Wind",u"Emmanuel",u"Robin",u"Happpy","Wishper"]
+
+NOM_FICHIER_HORLOGE = NOM_DOSSIER_IMAGES + "/" + "H.png"
+TAILLE_TEXTE_HORLOGE = 40
+TEXTE_APRES_CHRONO = "s"
+POLICE_TEXTE_HORLOGE = NOM_DOSSIER_FONTS + "/" + "Curl.TTF"
+POS_X_HORLOGE = 3
+CORRECTION_POS_Y_HORLOGE = 3
+CORRECTION_POS_X_TEXTE_HORLOGE = 5
+TEMPS_ATTENTE_FIN_VAGUE = 3 #(secondes)Avant le début du chrono pour la prochaine vague
+COULEUR_ROUGE_TEXTE_CHRONO = 255
+COULEUR_VERTE_TEXTE_CHRONO = 0
+COULEUR_BLEU_TEXTE_CHRONO = 0
+POLICE_TEXTE_DEBUT_VAGUE = NOM_DOSSIER_FONTS + "/" + "Curl.TTF"
+TAILLE_TEXTE_DEBUT_VAGUE = 30
+COULEUR_ROUGE_TEXTE_DEBUT_VAGUE = 0
+COULEUR_VERTE_TEXTE_DEBUT_VAGUE = 0
+COULEUR_BLEU_TEXTE_DEBUT_VAGUE = 0
+NOM_FICHIER_CASE_SELECTION = NOM_DOSSIER_IMAGES + "/" + "caseSelection.png"
+
+MARGE_MONSTRE_QUITTE_CARTE = 3 #le monstre devra quitter l'écran d'une distance équivalente de 3 cases avant
+#que le joueur ne perde de vie
+TEMPS_ATTENTE_DEBUT_MOUVEMENT_MONSTRES = 3
+NOM_FICHIER_IMAGE_FONT_DEBUT_VAGUE = NOM_DOSSIER_IMAGES + "/" + "fontTexteAvantVague.png"
+TEMPS_AFFICHAGE_TEXTE_DEBUT_VAGUE = 2 #en secondes
+TEMPS_AVANT_DEBUT_VAGUE = 3 #en secondes
+NOM_FICHIER_CASE_POSSIBLE = NOM_DOSSIER_IMAGES + "/" + "casePossible.png"
+SECONDES_PAR_FRAMES_CASE_POSSIBLE = 0.125
+NOMBRE_SPRITES_LARGEUR_CASE_POSSIBLE = 5
+NOMBRE_SPRITES_HAUTEUR_CASE_POSSIBLE = 1
+FICHIER_IMAGE_COEUR = NOM_DOSSIER_IMAGES + "/" + "coeur.png"
+POS_X_COEUR = 3
+CORRECTION_POS_Y_COEUR = 3
+POLICE_TEXTE_VIE = NOM_DOSSIER_FONTS + "/" + "Curl.TTF"
+TAILLE_TEXTE_VIE = 40
+COULEUR_ROUGE_TEXTE_VIE = 255
+COULEUR_VERTE_TEXTE_VIE = 0
+COULEUR_BLEU_TEXTE_VIE = 0
+CORRECTION_POS_X_TEXTE_VIE = 3
+POLICE_ANNONCE_CARTE = NOM_DOSSIER_FONTS + "/" + "Curl.TTF"
+TAILLE_TEXTE_ANNONCE_CARTE = 40
+COULEUR_ROUGE_TEXTE_ANNONCE_CARTE = 255
+COULEUR_VERTE_TEXTE_ANNONCE_CARTE = 255
+COULEUR_BLEU_TEXTE_ANNONCE_CARTE = 255
+TEMPS_ANNONCE_CARTE = 5 #secondes
+FICHIER_IMAGE_FONT_ANNONCE = NOM_DOSSIER_IMAGES + "/" + "fontNoir.png"
+POLICE_TEXTE_NOMBRE_MONSTRES = NOM_DOSSIER_FONTS + "/" + "Curl.TTF"
+TAILLE_TEXTE_NOMBRE_MONSTRES = 40
+COULEUR_ROUGE_TEXTE_NOMBRE_MONSTRES = 255
+COULEUR_VERTE_TEXTE_NOMBRE_MONSTRES = 0
+COULEUR_BLEU_TEXTE_NOMBRE_MONSTRES = 0
+FICHIER_IMAGE_SYMBOLE_MONSTRES = NOM_DOSSIER_IMAGES + "/" + "symboleMonstre.png"
+FICHIER_IMAGE_FONT_PLACER_HEROS = NOM_DOSSIER_IMAGES + "/" + "fontPlacerHeros.png"
+FICHIER_IMAGE_SYMBOLE_PLACER_HERO = NOM_DOSSIER_IMAGES + "/" + "symbolePlacerHero.png"
+CORRECTION_X_SYMBOLE_PLACEMENT_HERO = 3
+CORRECTION_Y_SYMBOLE_PLACEMENT_HERO = 3
+
+#Pour l'interface de choix du héros à placer
+#Les positions sont prises dans l'image elle-même et non dans la fenêtre du jeu
+#voir un logiciel de dessin pour déterminer ces positions
+POS_X_MIN_PLACE = 59
+POS_Y_MIN_PLACE = 441
+POS_X_MAX_PLACE = 178
+POS_Y_MAX_PLACE = 464
+
+POS_X_MIN_DIMINUER_CHOIX_HEROS = 6
+POS_Y_MIN_DIMINUER_CHOIX_HEROS = 434
+POS_X_MAX_DIMINUER_CHOIX_HEROS = 44
+POS_Y_MAX_DIMINUER_CHOIX_HEROS = 472
+
+POS_X_MIN_AUGMENTER_CHOIX_HEROS = 195
+POS_Y_MIN_AUGMENTER_CHOIX_HEROS = 434
+POS_X_MAX_AUGMENTER_CHOIX_HEROS = 234
+POS_Y_MAX_AUGMENTER_CHOIX_HEROS = 472
+
+POX_X_MIN_AUGMENTER_NIVEAU = 19
+POX_Y_MIN_AUGMENTER_NIVEAU = 412
+POX_X_MAX_AUGMENTER_NIVEAU = 220
+POX_Y_MAX_AUGMENTER_NIVEAU = 428
+
+POS_X_MIN_CROIX_INTERFACE = 1
+POS_Y_MIN_CROIX_INTERFACE = 1
+POS_X_MAX_CROIX_INTERFACE = 20
+POS_Y_MAX_CROIX_INTERFACE = 23
+
+POS_X_ORIGINE_ICONE_HEROS_INTERFACE = 6
+POS_Y_ORIGINE_ICONE_HEROS_INTERFACE = 50
+
+POLICE_AFFICHAGE_INFO_INTERFACE_HEROS = NOM_DOSSIER_FONTS + "/" + "Curl.TTF"
+TAILLE_POLICE_AFFICHAGE_INFO_INTERFACE_HERO = 17
+
+COULEUR_ROUGE_TEXTE_DEFENSE_FLOUZ = 0
+COULEUR_VERTE_TEXTE_DEFENSE_FLOUZ = 0
+COULEUR_BLEU_TEXTE_DEFENSE_FLOUZ = 0
+
+#texte de gauche
+COULEUR_ROUGE_TEXTE_INFO_HEROS_INTERFACE = 255
+COULEUR_VERTE_TEXTE_INFO_HEROS_INTERFACE = 255
+COULEUR_BLEU_TEXTE_INFO_HEROS_INTERFACE = 255
+#texte de droite
+COULEUR_ROUGE_TEXTE_INFO_HEROS_INTERFACE2 = 255
+COULEUR_VERTE_TEXTE_INFO_HEROS_INTERFACE2 = 0
+COULEUR_BLEU_TEXTE_INFO_HEROS_INTERFACE2 = 0
+
+POS_X_TEXTE_NOM_HEROS_INTERFACE = 6
+POS_Y_TEXTE_NOM_HEROS_INTERFACE = 200
+
+TEXTE_SECONDES_PAR_ATTAQUE = u"sec/att"
+COEFFICIENT_PRIX_HERO = [0,0,0,0,318,318,318,965,965,965,1548,1548,1548,2230,2230] #exagéré pour le 60 mais ça vaut le coup !
+#prix = coefficient x niveau
+COEFFICIENT_NIVEAU_SUIVANT = [60,60,60,60,147,147,147,498,498,498,942,942,942,1603,1603] #pour calculer l'expérience requise pour monter au
+#niveau suivant
+#experience requise pour passer au niveau suivant = coefficient niveau
+EXPERIENCE_AU_NIVEAU_1 = 3 #Un personnage a X points d'expérience lorsqu'il est au niveau 1
+SIGLE_DEFENSE_FLOUZ = "DF"
+DEFENSE_FLOUZ = u"Défense Flouz"
+FICHIER_IMAGE_ICONE_DEFENSE_FLOUZ = NOM_DOSSIER_IMAGES + "/" + "defenseFlouz.png"
+CORRECTION_X_AFFICHAGE_DEFENSE_FLOUZ = 5
+
+COEFFICIENT_DEFENSE_FLOUZ_RETIRER_HERO = 0.75 #pour calculer l'argent que le joueur reçoit lorsqu'il efface un heros de la carte
+#argent reçu = coeff * prix invocation
+
+VALEUR_MAX_DEFENSE_FLOUZ = 999999999 #juste comme ça mais ça aurait pu aller plus haut, c'est juste souci d'affichage "propre" sur la carte
+#(pour ne pas faire tache)
+
+NIVEAU_HERO_MAXIMUM = 300 #juste comme ça... c'est déjà beaucoup...
+
+CORRECTION_Y_AFFICHAGE_DEFENSE_FLOUZ_CARTE = 3
+FONT_AFFICHAGE_DEFENSE_FLOUZ_CARTE = NOM_DOSSIER_FONTS + "/" + "Curl.TTF"
+TAILLE_AFFICHAGE_DEFENSE_FLOUZ_CARTE = 17
+FONT_AFFICHER_S_DEBUTER_VAGUE = NOM_DOSSIER_FONTS + "/" + "Curl.TTF"
+TAILLE_POLICE_AFFICHER_S_DEBUT_VAGUE = 25
+TEXTE_DEBUTER_VAGUE_S = u"S : Démarrer immédiatement la vague"
+COULEUR_ROUGE_TEXTE_S_DEBUTER_VAGUE = 255
+COULEUR_VERTE_TEXTE_S_DEBUTER_VAGUE = 0
+COULEUR_BLEU_TEXTE_S_DEBUTER_VAGUE = 0
+FONT_ANNULER_INVOCATION = NOM_DOSSIER_FONTS + "/" + "Curl.TTF"
+TAILLE_POLICE_ANNULER_INVOCATION = 25
+COULEUR_ROUGE_TEXTE_ANNULER_INVOCATION = 255
+COULEUR_VERTE_TEXTE_ANNULER_INVOCATION = 0
+COULEUR_BLEU_TEXTE_ANNULER_INVOCATION = 0
+TEXTE_ANNULER_INVOCATION = u"RETOUR ARRIERE : Annuler l'invocation"
+NOM_PORTEE = "cases"
+SON_MISE_EN_PAUSE = NOM_DOSSIER_SONS + "/" + "GameBoy.wav"
+SON_ACHAT_HERO = NOM_DOSSIER_SONS + "/" + "achat.wav"
+SON_APPARITION_MONSTRE = NOM_DOSSIER_SONS + "/" + "monsterAppear.wav"
+SON_EXPLOSION = NOM_DOSSIER_SONS + "/" + "048-Explosion01.wav"
+SON_CHOIX_HERO_INTERFACE = NOM_DOSSIER_SONS + "/" + "Curseur2.wav"
+SON_ANNULE2 = NOM_DOSSIER_SONS + "/" + "annuler2.wav"
+
+
+
+
+
+##############################################################################
+#PERSONNAGE
+##############################################################################
+
+
+TAILLE_CASE = 32
+CORRECTION_SYNCHRO_VITESSE_DEPLA_ANIMATION = 2
+CORRECTION_PIXEL_Y_PLACEMENT_CARTE = 8
+POURCENTAGE_MAX_DEGATS_SUPPLEMENTAIRES_COUP_CRITIQUE = 30 #en cas de coup critique l'ennemi
+#pourra subir jusqu'à X% de dégats supplémentaires
+POURCENTAGE_MIN_DEGATS_SUPPLEMENTAIRES_COUP_CRITIQUE = 10
+#même si on ne fait pas des coups critiques les dégats infligés peuvent varier
+#on peut infliger entre X% de dégats en moins ou jusqu'à X% de dégats en plus
+POURCENTAGE_MIN_DEGATS_SUPPLEMENTAIRES = -9
+POURCENTAGE_MAX_DEGATS_SUPPLEMENTAIRES = 9
+COEFFICIENT_CORRECTION_ANIMATION_HEROS = 2
+FONT_DEGATS = NOM_DOSSIER_FONTS + "/" + "Curl.TTF"
+TAILLE_FONT_DEGATS = 15
+COULEUR_ROUGE_TEXTE_DEGATS = 255
+COULEUR_VERT_TEXTE_DEGATS = 0
+COULEUR_BLEU_TEXTE_DEGATS = 0
+CORRECTION_POSX_TEXTE_DEGATS = 3
+CORRECTION_POSY_TEXTE_DEGATS = -3
+TEMPS_AFFICHAGE_DEGATS = 1 #en secondes
+NOMBRE_HEROS = 15
+TEXTE_HERO_RATE_ENNEMI = u"Raté"
+POURCENTAGE_MIN_CHANCE_TOUCHE_SUPPLEMENTAIRE = -5 #%
+POURCENTAGE_MAX_CHANCE_TOUCHE_SUPPLEMENTAIRE = 5 #%
+FICHIER_IMAGE_SPRITE_SCEAU_INVOCATION = NOM_DOSSIER_IMAGES + "/" + "seauMonstres.png"
+
+
+
+##############################################################################
+#BARRE DE VIE
+##############################################################################
+
+
+PV_PAR_DEFAUT = 100
+PV_MAX_PAR_DEFAUT = 100
+FONT_TEXTE_BARRE_DE_VIE = NOM_DOSSIER_FONTS + "/" + "Curl.TTF"
+TAILLE_POLICE_TEXTE_BARRE_DE_VIE = 17
+COULEUR_ROUGE_TEXTE_BARRE_DE_VIE = 0
+COULEUR_VERT_TEXTE_BARRE_DE_VIE = 0
+COULEUR_BLEU_TEXTE_BARRE_DE_VIE = 0
+POSITION_Y_CADRE_BARRE_DE_VIE = 10
+IMAGE_CADRE_BARRE_DE_VIE = NOM_DOSSIER_IMAGES + "/" + "cadreBarreDeVie.png"
+IMAGE_BARRE_DE_VIE_NORMAL = NOM_DOSSIER_IMAGES + "/" + "barreDeVie.png"
+IMAGE_BARRE_DE_VIE_MOYEN = NOM_DOSSIER_IMAGES + "/" + "barreDeVie2.png"
+IMAGE_BARRE_DE_VIE_DANGER = NOM_DOSSIER_IMAGES + "/" + "barreDeVie3.png"
+POURCENTAGE_BARRE_MOYEN = 50
+POURCENTAGE_BARRE_DANGER = 25 #en dessous de 25% des PV Max la barre
+                              #passe en barre de danger
+                              #en dehors de ces cas on est en barre normale
+COULEUR_TRANSPARENCE_ROUGE = 255
+COULEUR_TRANSPARENCE_VERT = 0
+COULEUR_TRANSPARENCE_BLEU = 255
+CORRECTION_PIXEL = 1 #pour corriger de quelques pixel la position du texte sur la barre
+
+
+
+##############################################################################
+#ANIMATION
+##############################################################################
+
+
+
+NOMBRE_SPRITE_LARGEUR_PAR_DEFAUT = 4
+NOMBRE_SPRITE_HAUTEUR_PAR_DEFAUT = 4
+VITESSE_ANIMATION_PAR_DEFAUT = 0.2 #1 frame toutes les X secondes
+
+#CES CONSTANTES SERONT INUTILISEES CAR LA CLASSE PERMETTRA D'ANIMER
+#TOUTES SORTES DE CHOSES ET PAS UNIQUEMENT DES PERSONNAGES
+#LES CONSTANTES NE SONT LA QUE POUR UNE AIDE MEMOIRE DE LA
+#LECTURE DE LA FEUILLE DE SPRITE D'UN PERSONNAGE
+#LA DIRECTION ICI EST LA LIGNE SUR LA FEUILLE DE SPRITE
+#(basé sur une feuille de sprite RPG Maker XP)
+#DIRECTION_BAS = 0
+#DIRECTION_GAUCHE = 1
+#DIRECTION_DROITE = 2
+#DIRECTION_HAUT = 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+2(4).png
+520
+50
+30
+10
+0.8
+160
+070-Animal05.wav
+teleport.wav

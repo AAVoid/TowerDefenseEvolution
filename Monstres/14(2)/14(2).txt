@@ -1,0 +1,9 @@
+14(2).png
+30
+3
+0
+1000000
+1
+2
+sonMort1.wav
+teleport.wav

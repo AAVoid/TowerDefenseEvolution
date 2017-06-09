@@ -1,0 +1,9 @@
+4(3).png
+1000
+90
+0
+0
+1
+310
+074-Small01.wav
+teleport.wav
